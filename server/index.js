@@ -70,7 +70,7 @@ const init = async () => {
   await client.connect();
   
   await createTables();
-  console.log('tables created');
+  // console.log('tables created');
 
   const [nick, sophia, katherine, burger, pizza, steak]
   = await Promise.all([
@@ -82,10 +82,10 @@ const init = async () => {
     createRestaurants({name:'steak'}),
   ]);
 
-  console.log('data seeded');
+  // console.log('data seeded');
 
-  console.log(await fetchCustomers());
-  console.log(await fetchRestauraunts());
+  // console.log(await fetchCustomers());
+  // console.log(await fetchRestauraunts());
 
   const [reservation, reservation2] = await Promise.all([
     createReservations({
@@ -101,8 +101,8 @@ const init = async () => {
       eat_date: '04/05/2025'
     }),
   ]);
-  console.log('vacations created');
-  console.log(await fetchReservations());
+  // console.log('reservations created');
+  // console.log(await fetchReservations());
 
   // await destroyReservations({id: reservation.id, customer_id: reservation.customer_id});
   // console.log(await fetchReservations());
